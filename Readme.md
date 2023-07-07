@@ -61,6 +61,30 @@ Once logged in, go to the API Explorer page and select the `custom_rpc_function`
 
 Enter `00000000-0000-0000-0000-000000000000` as the user ID (this is the default user ID provided). This will allow you to interact with the desired custom RPC function.
 
+The request is structured as follows:
+```
+{
+    "type": "some_type",
+    "version": "some_version",
+    "hash": "some_hash"
+}
+```
+Please note that all fields are optional, as required by the task. 
+
+In order to effectively parse test JSON files, you can enter the payload as follows:
+```
+{
+    "type": "core",
+    "version": "1.0.0",
+}
+```
+or
+```
+{
+    "type": "extension",
+    "version": "3.0.0",
+}
+```
 # Tests
 
 To simulate Nakama interfaces for testing purposes, I used [mockery](https://github.com/vektra/mockery). It allowed me to create mock versions of Nakama interfaces, making it easier to test and verify their functionality.
